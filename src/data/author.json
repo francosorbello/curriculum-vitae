@@ -1,12 +1,11 @@
 {
-    "name": "Anna Quincey",
-    "occupation": "Front-End Developer",
-    "location": "Vienna, AT",
+    "name": "Franco Sorbello",
+    "occupation": "Software Developer",
+    "location": "Mendoza, Argentina",
     "avatar": "avatar.jpg",
-    "pronouns": "she/her",
-    "email": "anna.quincey@gmail.com",
-    "telephone": "+01 23 456 789",
-    "website": "https://annaquincey.dev",
+    "pronouns": "he/him",
+    "email": "franco.sorbelo@gmail.com",
+    "telephone": "+54 261 636 3940",
     "skills": [
         "HTML",
         "CSS",
@@ -17,28 +16,24 @@
     ],
     "languages": [
         {
-            "name": "English",
+            "name": "Spanish",
             "level": "native"
         },
         {
-            "name": "German",
+            "name": "English",
             "level": "fluent"
-        },
-        {
-            "name": "French",
-            "level": "basic"
         }
     ],
     "social": [
         {
             "name": "Github",
-            "user": "@annaquincey",
-            "url": "https://github.com/annaquincey"
+            "user": "@francosorbello",
+            "url": "https://github.com/francosorbello/"
         },
         {
             "name": "LinkedIn",
-            "user": "AnnaQncy",
-            "url": "https://www.linkedin.com/in/annaquincey"
+            "user": "@franco-sorbello",
+            "url": "https://www.linkedin.com/in/franco-sorbello/"
         }
     ]
 }
