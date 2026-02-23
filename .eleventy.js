@@ -20,7 +20,7 @@ export default async function (config) {
         config.addTransform(transformName, transforms[transformName])
     })
 
-    // Shortcodes
+    // Shortcode
     Object.entries(shortcodes).forEach(([shortcodeName, func]) => {
         config.addShortcode(shortcodeName, func)
     })
@@ -45,6 +45,21 @@ export default async function (config) {
     // Layouts
     config.addLayoutAlias('base', 'base.njk')
     config.addLayoutAlias('resume', 'resume.njk')
+
+    config.addCollection("englishCollections", function (collectionsAPI) {
+        const byStartDate = (a, b) => {
+            if (a.data.start && b.data.start) {
+                return a.data.start - b.data.start
+            }
+            return 0
+        }
+        let col = collectionsAPI
+        .getFilteredByTag("english")
+        .sort(byStartDate)
+        
+        console.log(col)
+        return col
+    })
 
     // Collections
     const collections = ['work', 'education']
