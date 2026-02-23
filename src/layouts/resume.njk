@@ -1,10 +1,17 @@
 ---
 layout: base
 ---
-<main class="main container">
 
-        {% if collections.introduction.length %}
-            {% set intro = collections.introduction|first %}
+<main class="main container">
+{%if language == "spanish"%}
+    {%set collectionToUse = collections.en%}
+{%elif language == "english" %}
+    {%set collectionToUse = collections.en%}
+{%endif%}
+
+{%if collectionToUse %}
+            {% if collectionToUse.introduction.length %}
+            {% set intro = collectionToUse.introduction|first %}
             <section class="section" id="section-introduction">
                 <h2 class="section__title">{{ intro.data.title }}</h2>
                 <div class="lead p-summary">
@@ -15,14 +22,14 @@ layout: base
 
         <section class="section" id="section-experience">
             <h2 class="section__title">{{ strings.titles.experience }}</h2>
-            {% set entries = collections.work %}
+            {% set entries = collectionToUse.work %}
             {% set microformat = "p-experience" %}
             {% include "entrylist.njk" %}
         </section>
 
         <section class="section" id="section-education">
             <h2 class="section__title">{{ strings.titles.education }}</h2>
-            {% set entries = collections.education %}
+            {% set entries = collectionToUse.education %}
             {% set microformat = "p-education" %}
             {% include "entrylist.njk" %}
         </section>
@@ -52,23 +59,5 @@ layout: base
             {% endif %}
         </div>
     {% endif %}
-
-    {# {% if repositories.length %}
-        <section class="section" id="section-oss">
-            <h2 class="section__title">{{ strings.titles.open_source }}</h2>
-            {% include "repositories.njk" %}
-        </section>
-    {% endif %}
-
-    {% if collections.custom.length %}
-        {% set custom = collections.custom|first %}
-        <section class="section" id="section-custom">
-            {% if custom.data.title %}
-                <h2 class="section__title">{{ custom.data.title }}</h2>
-            {% endif %}
-            <div class="markdown">
-                {{ custom.templateContent | safe }}
-            </div>
-        </section>
-    {% endif %} #}
+{%endif%}
 </main>

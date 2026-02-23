@@ -2,6 +2,6 @@
 title: Bachelors in Computer Science
 organization: Universidad de Cuyo
 location: Mendoza, Argentina
-start: 2017
-end: 2025
+start: 2017-03-01
+end: 2026-01-01
 ---

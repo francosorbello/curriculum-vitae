@@ -1,14 +1,9 @@
 ---
 layout: base
 ---
-
 <main class="main container">
-{%if language == "spanish"%}
-    {%set collectionToUse = collections.en%}
-{%endif%}
 
-{%if collectionToUse %}
-            {% if collections.introduction.length %}
+        {% if collections.introduction.length %}
             {% set intro = collections.introduction|first %}
             <section class="section" id="section-introduction">
                 <h2 class="section__title">{{ intro.data.title }}</h2>
@@ -57,5 +52,23 @@ layout: base
             {% endif %}
         </div>
     {% endif %}
-{%endif%}
+
+    {# {% if repositories.length %}
+        <section class="section" id="section-oss">
+            <h2 class="section__title">{{ strings.titles.open_source }}</h2>
+            {% include "repositories.njk" %}
+        </section>
+    {% endif %}
+
+    {% if collections.custom.length %}
+        {% set custom = collections.custom|first %}
+        <section class="section" id="section-custom">
+            {% if custom.data.title %}
+                <h2 class="section__title">{{ custom.data.title }}</h2>
+            {% endif %}
+            <div class="markdown">
+                {{ custom.templateContent | safe }}
+            </div>
+        </section>
+    {% endif %} #}
 </main>

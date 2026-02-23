@@ -89,40 +89,8 @@ export default async function (config) {
         return langToCollections("english", collectionsAPI)
     })
 
-    config.addCollection("englishCollections", function (collectionsAPI) {
-        const byStartDate = (a, b) => {
-            if (a.data.start && b.data.start) {
-                return a.data.start - b.data.start
-            }
-            return 0
-        }
-        let col = collectionsAPI
-            .getFilteredByTag("english")
-            .sort(byStartDate)
-        return col
-    })
-
-
-    // Collections
-    const collections = ['work', 'education']
-    collections.forEach((name) => {
-        config.addCollection(name, function (collection) {
-            const folderRegex = new RegExp(`\/${name}\/`)
-            const inEntryFolder = (item) =>
-                item.inputPath.match(folderRegex) !== null
-
-            const byStartDate = (a, b) => {
-                if (a.data.start && b.data.start) {
-                    return a.data.start - b.data.start
-                }
-                return 0
-            }
-
-            return collection
-                .getAllSorted()
-                .filter(inEntryFolder)
-                .sort(byStartDate)
-        })
+    config.addCollection("es", function (collectionsAPI) {
+        return langToCollections("spanish", collectionsAPI)
     })
 
     // Pass-through files
