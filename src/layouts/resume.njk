@@ -53,7 +53,7 @@ layout: base
         </div>
     {% endif %}
 
-    {% if repositories.length %}
+    {# {% if repositories.length %}
         <section class="section" id="section-oss">
             <h2 class="section__title">{{ strings.titles.open_source }}</h2>
             {% include "repositories.njk" %}
@@ -70,5 +70,5 @@ layout: base
                 {{ custom.templateContent | safe }}
             </div>
         </section>
-    {% endif %}
+    {% endif %} #}
 </main>

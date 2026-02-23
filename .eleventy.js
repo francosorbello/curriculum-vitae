@@ -6,6 +6,44 @@ import * as transforms from './utils/transforms.js'
 import * as shortcodes from './utils/shortcodes.js'
 import iconsprite from './utils/iconsprite.js'
 
+
+/** 
+ * collections.[lang].introduction
+ * collections.[lang].work
+ * collections.[lang].education
+*/
+function langToCollections(langTag, collectionsAPI) {
+    let collection = {}
+
+    // get introduction based on language. introduction.md must have the "introduction" tag
+    collection["introduction"] = collectionsAPI.getFilteredByTags(langTag, "introduction")
+
+    var englishContent = collectionsAPI.getFilteredByTag(langTag)
+
+    const collections = ['work', 'education']
+    collections.forEach((name) => {
+        const folderRegex = new RegExp(`\/${name}\/`)
+        const inEntryFolder = (item) =>
+            item.inputPath.match(folderRegex) !== null
+
+        const byStartDate = (a, b) => {
+            if (a.data.start && b.data.start) {
+                return a.data.start - b.data.start
+            }
+            return 0
+        }
+
+        collection[name] = collectionsAPI
+            .getFilteredByTag(langTag)
+            // .getAllSorted()
+            .filter(inEntryFolder)
+            .sort(byStartDate)
+    })
+
+    console.log(collection.education.length)
+    return collection
+}
+
 export default async function (config) {
     // Plugins
     config.addPlugin(pluginRss)
@@ -46,6 +84,11 @@ export default async function (config) {
     config.addLayoutAlias('base', 'base.njk')
     config.addLayoutAlias('resume', 'resume.njk')
 
+    // console.log(Object.getOwnPropertyNames(config))
+    config.addCollection("en", function (collectionsAPI) {
+        return langToCollections("english", collectionsAPI)
+    })
+
     config.addCollection("englishCollections", function (collectionsAPI) {
         const byStartDate = (a, b) => {
             if (a.data.start && b.data.start) {
@@ -54,12 +97,11 @@ export default async function (config) {
             return 0
         }
         let col = collectionsAPI
-        .getFilteredByTag("english")
-        .sort(byStartDate)
-        
-        console.log(col)
+            .getFilteredByTag("english")
+            .sort(byStartDate)
         return col
     })
+
 
     // Collections
     const collections = ['work', 'education']
