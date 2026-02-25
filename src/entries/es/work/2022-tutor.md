@@ -6,4 +6,4 @@ start: 2022-06-01
 end: 2023-09-01
 ---
 
-Ayudé a alumnos de distintas universidades en lenguajes orientados a objetos como C# y Java.
+Trabajé dando clases particulares online a estudiantes de diferentes universidades, centrándome en lenguajes como C# y Java. Ayudé a estudiantes con conceptos de programación orientada a objetos, además de bugfixing e implementación.

@@ -2,10 +2,8 @@
 title: Software Developer (Javascript, Node, Python, AWS)
 organization: Chromatic Games
 organizationUrl: https://chromatic.games/
-start: 2023-09-02
+start: 2023-07-02
 end: 2025-07-01
 ---
 
-- Trabajé con AWS Lambda y DynamoDB, implementando arquitecturas serverless.
-- Trabajé con EC2 y Node.js, implementando servicios de backend. 
-- Trabajé con tecnologías de Frontend, como React y Vue, desarrollando herramientas para desarrolladores y otras tareas relacionadas al desarrollo web
+Implementé arquitecturas serverless con AWS Lambda, Javascript y Python. Además, trabajé en backend utilizando EC2, Cognito y Node. En el lado de Frontend, utilizé React y Vue para crear herramientas internas y otras tareas relacionadas al desarrollo web. 

@@ -6,4 +6,4 @@ start: 2022-06-01
 end: 2023-09-01
 ---
 
-Helped students from different universities with languages like C# and Java.
+Provided online tutoring for students from different universities, focusing on languages like C# and Java. Helped students both with Object Oriented programming concepts, as well as debugging and best practices.
