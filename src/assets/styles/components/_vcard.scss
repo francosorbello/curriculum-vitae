@@ -78,6 +78,9 @@
 
     &__lang-icon {
         color: variables.$primary-color;
+        max-width: fit-content;
+        position: relative;
+        top: -1px;
     }
 
     @include mixins.mq(md) {
