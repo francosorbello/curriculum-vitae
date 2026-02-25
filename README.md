@@ -63,7 +63,22 @@ export default async function (config) {
 
 > Explanation: `langToCollections(language)` takes all content tagged as part of a language, and creates a collection containing 3 sub-collections: an introduction, work and education.
 
-### 4. Adding new content
+### 4. Add new language to navigation bar
+
+Locate the `vcard.njk` file and navigate to the `div` element with the `vcard__lang-div` class.
+Add a new element to the `<nav>` element, with the following text:
+```html
+<a class="vcard__lang-link {% if language=="[language name]" %}selected {%endif %}" href="/[language abreviation]/">[language abreviation]</a>
+```
+
+For our example, it will look like this:
+```html
+<a class="vcard__lang-link {% if language=="spanish" %}selected {%endif %}" href="/es/">ES</a>
+```
+
+> Explanation: This will add our language to a navbar the users can interact with. When selecting a language, it will load the aproppiate html.
+
+### 5. Adding new content
 
 Check the [Costumize Your CV](#customize-your-cv) section. Just make sure your content is inside the appropiate language folder.
 
