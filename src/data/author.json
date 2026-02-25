@@ -7,12 +7,12 @@
     "email": "franco.sorbelo@gmail.com",
     "telephone": "+54 261 636 3940",
     "skills": [
-        "HTML",
-        "CSS",
         "Javascript / ES6",
-        "UI Design",
-        "React",
-        "Git"
+        "Node",
+        "Git",
+        "C#",
+        "Java",
+        "Python"
     ],
     "languages": [
         {

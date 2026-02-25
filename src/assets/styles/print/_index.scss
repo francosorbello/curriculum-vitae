@@ -73,6 +73,10 @@
         margin: 0 2rem 0 0 !important;
         border: 0;
     }
+    
+    .vcard__lang-div {
+        display: none !important;
+    }
 
     .entrylist::before,
     .entrylist__item::before,
