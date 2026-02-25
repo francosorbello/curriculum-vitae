@@ -48,6 +48,37 @@
             margin-right: 0.125em;
         }
     }
+    
+    &__lang-div {
+        display: flex;
+        flex-grow: 1;
+        min-width: 100px;
+        justify-content: end;
+    }
+
+    &__lang-block {
+        display: inherit;
+        height: fit-content;
+        background-color: variables.$gray-light;
+        padding: 4px 4px 4px 4px;
+        border-radius: 5px;
+        gap: 10px;
+    }
+
+    &__lang-link {
+        color: variables.$gray;
+        padding: 5px 5px 5px 5px;
+        border-radius: 5px;
+        &.selected {
+            color: black;
+            background-color: white;
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1); 
+        }
+    }
+
+    &__lang-icon {
+        color: variables.$primary-color;
+    }
 
     @include mixins.mq(md) {
         &__social {

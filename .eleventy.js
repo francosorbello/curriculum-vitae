@@ -17,9 +17,6 @@ function langToCollections(langTag, collectionsAPI) {
 
     // get introduction based on language. introduction.md must have the "introduction" tag
     collection["introduction"] = collectionsAPI.getFilteredByTags(langTag, "introduction")
-    if (langTag == "spanish") {
-        console.log(collectionsAPI.getFilteredByTag(langTag))
-    }
 
     const collections = ['work', 'education']
     collections.forEach((name) => {
@@ -41,7 +38,6 @@ function langToCollections(langTag, collectionsAPI) {
             .sort(byStartDate)
     })
 
-    console.log(collection.education.length)
     return collection
 }
 
