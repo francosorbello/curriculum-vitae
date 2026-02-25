@@ -1,0 +1,33 @@
+name: Build & Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # or 'main' if that's your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Eleventy site
+        run: npm run build
+
+      - name: Deploy to fransocorbello.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
+          external_repository: francosorbello/francosorbello.github.io
+          publish_branch: main   # branch in the target repo
+          publish_dir: ./_site   # Eleventy's default output folder
