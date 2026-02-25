@@ -7,10 +7,15 @@ import * as shortcodes from './utils/shortcodes.js'
 import iconsprite from './utils/iconsprite.js'
 
 
-/** 
- * collections.[lang].introduction
- * collections.[lang].work
- * collections.[lang].education
+/**
+ * Given a language, returns a collection with the following content:
+ *  
+ * - introduction: contains translated introduction file (placed in content folder)
+ * - collections.work: contains translated work files (placed in work folder)
+ * - collections.education: contains translated education files (placed in education folder)
+ * 
+ * @param {string} langTag language to translate to
+ * @param {any} collectionsAPI object provided by eleventy "addCollection" function
 */
 function langToCollections(langTag, collectionsAPI) {
     let collection = {}
@@ -81,7 +86,6 @@ export default async function (config) {
     config.addLayoutAlias('base', 'base.njk')
     config.addLayoutAlias('resume', 'resume.njk')
 
-    // console.log(Object.getOwnPropertyNames(config))
     config.addCollection("en", function (collectionsAPI) {
         return langToCollections("english", collectionsAPI)
     })

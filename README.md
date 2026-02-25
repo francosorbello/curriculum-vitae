@@ -1,3 +1,72 @@
+# Adding a new language
+
+### 1. Setting up the index file
+
+First, create a folder in the `/src` folder named after your language of choice. For this example, we are using the spanish (es) language. In that folder, add a `index.njk` file with the following contents:
+
+```yml
+---
+layout: resume
+permalink: ./[language abreviation]/
+language: [language] 
+---
+```
+
+For example, the spanish language would look like:
+```yaml
+---
+layout: resume
+permalink: ./es/
+language: spanish
+---
+```
+
+This file will be the entry point for your website, meaning that you will access it by going to `your-domain.com/[language abreviation]`. 
+For example, in spanish this is `your-domain.com/es`
+
+> Explanation: we need to create an index.html file for each language. We use a [permalink](https://www.11ty.dev/docs/permalinks/) so we can easily redirect users to the correct page when selectin a language. We also add a `language` property so we can identify which content to put on the page.
+### 2. Setting up the contents file
+
+Add a new folder in the `/entries` folder. This folder will contain your content (introduction, jobs and education). All languages should contain the same information, so i recommend duplicating another languages folder.
+
+Add a json file with the same name inside your new folder, and set the following text:
+```json
+{
+    "tags" : "[your language]"
+}
+
+```
+You should have the following structure:
+```
+entries/
+- en/
+- [your language]/
+  - content/
+  - education/
+  - work/
+  - [your language].json
+```
+> Explanation: we want to tag all content with their related language, so we can create a [collection](https://www.11ty.dev/docs/collections/). We will use this collection to generate an html file (created in the previous section) with the translated content. 
+
+### 3. Add a collection to eleventy
+
+On the `.eleventy.js` file, inside the exported, function, add the following code:
+```js
+export default async function (config) {
+    //...
+    config.addCollection("[language abreviation]", function (collectionsAPI){
+        return langToCollections("[language name]", collectionsAPI)
+    })
+    // ...
+}
+```
+
+> Explanation: `langToCollections(language)` takes all content tagged as part of a language, and creates a collection containing 3 sub-collections: an introduction, work and education.
+
+### 4. Adding new content
+
+Check the [Costumize Your CV](#customize-your-cv) section. Just make sure your content is inside the appropiate language folder.
+
 # Resume
 
 An online résumé. [Demo Site](https://demo-resume.netlify.app)  
@@ -32,7 +101,7 @@ Deploy a fork of this template to Netlify:
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/maxboeck/resume) 
 
-## Customize your Résumé
+## Customize your CV
 
 To edit the content and design of your résumé, follow these steps:
 
@@ -212,8 +281,43 @@ Supported properties are:
 
 ### 7. Internationalization
 
-There are a few hardcoded english strings used in the template, such as the section titles and some labels. If you want to change the default language from english to something else, you can translate these strings by changing the values in `data/strings.json`.
+There are a few hardcoded english strings used in the template, such as the section titles and some labels. ~~If you want to change the default language from english to something else, you can translate these strings by changing the values in `data/strings.json`.~~ You can translate them following the steps below:
 
+1. Add a new object with the appropiate entries:
+```json
+    "en": {
+        //object with all the strings that need translating. You can copy this and translate it later
+    }
+    "[language abreviaion]": {
+        "titles": {
+            "experience": "",
+            "education": "",
+            "skills": "",
+            "languages": "",
+            "open_source": ""
+        },
+        "labels": {
+            "email": "",
+            "telephone": "",
+            "print": "",
+            "present": "",
+            "lastUpdated": ""
+        }
+    }
+```
+2. Navigate to `data/eleventyComputed.js`.
+3. Locate the `getTranslatedStrings()` function and add your language on the `switch case`.
+```js
+getTranslatedStrings({ language }) {        
+        switch (language) {
+            // ...
+            //add a new case for your language:
+            case [your language]:
+                return strings.[language abreviation]
+            // ...
+        }
+    }
+```
 ## Credits
 
 Thanks to [Eric Bailey](https://ericwbailey.design/) for his post ["How to not make a résumé in React"](https://ericwbailey.design/writing/how-to-not-make-a-resume-in-react.html), which gave me the idea.
