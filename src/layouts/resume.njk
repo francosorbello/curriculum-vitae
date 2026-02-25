@@ -8,11 +8,11 @@ layout: base
 {% set stringsToUse = getTranslatedStrings %}
 
 {%if collectionToUse %}
-            {% if collectionToUse.introduction.length %}
+        {% if collectionToUse.introduction.length %}
             {% set intro = collectionToUse.introduction|first %}
             <section class="section" id="section-introduction">
                 <h2 class="section__title">{{ intro.data.title }}</h2>
-                <div class="lead p-summary">
+                <div class="lead p-summary" style="text-align: justify">
                     {{ intro.templateContent | safe }}
                 </div>
             </section>
