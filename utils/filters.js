@@ -59,7 +59,3 @@ export function themeColors(colors) {
     }
     return style
 }
-
-export function translateString(string) {
-    
-}
