@@ -3,11 +3,9 @@ layout: base
 ---
 
 <main class="main container">
-{%if language == "spanish"%}
-    {%set collectionToUse = collections.es%}
-{%elif language == "english" %}
-    {%set collectionToUse = collections.en%}
-{%endif%}
+
+{% set collectionToUse = getTranslatedCollection %}
+{% set stringsToUse = getTranslatedStrings %}
 
 {%if collectionToUse %}
             {% if collectionToUse.introduction.length %}
@@ -21,14 +19,14 @@ layout: base
         {% endif %}
 
         <section class="section" id="section-experience">
-            <h2 class="section__title">{{ strings.titles.experience }}</h2>
+            <h2 class="section__title">{{ stringsToUse.titles.experience }}</h2>
             {% set entries = collectionToUse.work %}
             {% set microformat = "p-experience" %}
             {% include "entrylist.njk" %}
         </section>
 
         <section class="section" id="section-education">
-            <h2 class="section__title">{{ strings.titles.education }}</h2>
+            <h2 class="section__title">{{ stringsToUse.titles.education }}</h2>
             {% set entries = collectionToUse.education %}
             {% set microformat = "p-education" %}
             {% include "entrylist.njk" %}
@@ -38,7 +36,7 @@ layout: base
         <div class="grid grid--2col">
             {% if author.skills %}
             <section class="section section--half" id="section-skills">
-                <h2 class="section__title">{{ strings.titles.skills }}</h2>
+                <h2 class="section__title">{{ stringsToUse.titles.skills }}</h2>
                 <ul class="bulletlist">
                 {% for skill in author.skills %}
                     <li class="p-skill">{{ skill }}</li>
@@ -49,7 +47,7 @@ layout: base
 
             {% if author.languages %}
             <section class="section section--half" id="section-languages">
-                <h2 class="section__title">{{ strings.titles.languages }}</h2>
+                <h2 class="section__title">{{ stringsToUse.titles.languages }}</h2>
                 <ul class="bulletlist">
                 {% for language in author.languages %}
                     <li class="p-skill">{{ language.name }} ({{ language.level }})</li>

@@ -1,16 +1,34 @@
 {
-    "titles": {
-        "experience": "Work Experience",
-        "education": "Education",
-        "skills": "Skills",
-        "languages": "Languages",
-        "open_source": "Open Source"
+    "en": {
+        "titles": {
+            "experience": "Work Experience",
+            "education": "Education",
+            "skills": "Skills",
+            "languages": "Languages",
+            "open_source": "Open Source"
+        },
+        "labels": {
+            "email": "Email",
+            "telephone": "Telephone",
+            "print": "Print CV",
+            "present": "Present",
+            "lastUpdated": "Last updated"
+        }
     },
-    "labels": {
-        "email": "Email",
-        "telephone": "Telephone",
-        "print": "Print Résumé",
-        "present": "Present",
-        "lastUpdated": "Last updated"
+    "es": {
+        "titles": {
+            "experience": "Experiencia",
+            "education": "Educación",
+            "skills": "Habilidades",
+            "languages": "Idiomas",
+            "open_source": "Open Source"
+        },
+        "labels": {
+            "email": "Email",
+            "telephone": "Teléfono",
+            "print": "Imprimir CV",
+            "present": "Presente",
+            "lastUpdated": "Última actualización"
+        }
     }
 }
