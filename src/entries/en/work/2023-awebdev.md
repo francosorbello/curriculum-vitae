@@ -6,8 +6,4 @@ start: 2023-07-01
 end: 2025-07-02
 ---
 
-Worked across diffen
-
-Worked with AWS Lambda, implementing serverless architecture.
-Worked with EC2 DynamoDB and Node.js, implementing backend services. 
-Worked with frontend technologies, like React and Vue, implementing developer tools and other website related tasks.
+Implemented serverless architecture with AWS Lambda, Javascript and Python. I also worked on backend tasks using EC2, Cognito and Node. On the Frontend Side, i worked with React and Vue, developing internal tools and helping in other web related tasks. 
