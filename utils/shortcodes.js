@@ -10,7 +10,8 @@ export function icon (name, isSocial) {
         'medium',
         'reddit',
         'slack',
-        'whatsapp'
+        'whatsapp',
+        'itchio'
     ]
     if (isSocial && !availableSocialIcons.includes(id)) {
         return `<span aria-hidden="true">${name}:&nbsp;</span>`
