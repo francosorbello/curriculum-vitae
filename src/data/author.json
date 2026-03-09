@@ -11,7 +11,7 @@
         "Node",
         "Git",
         "C#",
-        "Java",
+        "PHP",
         "Python"
     ],
     "languages": [
@@ -28,22 +28,26 @@
         {
             "name": "Github",
             "user": "@francosorbello",
-            "url": "https://github.com/francosorbello/"
+            "url": "https://github.com/francosorbello/",
+            "visible" : true
         },
         {
             "name": "LinkedIn",
             "user": "@franco-sorbello",
-            "url": "https://www.linkedin.com/in/franco-sorbello/"
+            "url": "https://www.linkedin.com/in/franco-sorbello/",
+            "visible" : true
         },
         {
             "name": "Itchio",
             "user": "@francosorbello",
-            "url": "https://francosorbello.itch.io/"
+            "url": "https://francosorbello.itch.io/",
+            "visible" : false
         },
         {
             "name": "Itchio",
             "user": "@followtherules",
-            "url": "https://followtherules.itch.io/"
+            "url": "https://followtherules.itch.io/",
+            "visible" : false
         }
     ]
 }
