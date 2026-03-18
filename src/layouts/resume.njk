@@ -57,5 +57,11 @@ layout: base
             {% endif %}
         </div>
     {% endif %}
+    {% if repositories.length %}
+        <section class="section" id="section-oss">
+            <h2 class="section__title">{{ stringsToUse.titles.open_source }}</h2>
+            {% include "repositories.njk" %}
+        </section>
+    {% endif %}
 {%endif%}
 </main>
