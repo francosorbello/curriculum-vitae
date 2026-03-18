@@ -4,7 +4,13 @@
         {% if repo.description %}
         
         <li class="repolist__item">
-            <h3 class="repolist__title"><a href="{{ repo.html_url }}">{{ repo.name }}</a></h3>
+            <h3 class="repolist__title">
+                <a href="{{ repo.html_url }}">{{ repo.name }}</a>
+                <span style="padding-left: 5px"></span>
+                {%for topic in repo.topics %}
+                    <span class="badge rounded text-bg-primary">#{{topic}}</span>
+                {%endfor%}
+            </h3>
             <p class="repolist__url utl-print-only">{{ repo.html_url }}</p>
             {% if repo.description %}
                 <p class="repolist__desc">{{ repo.description }}</p>

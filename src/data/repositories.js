@@ -24,9 +24,9 @@ export default async function () {
             const hasLanguage = LANGUAGES.includes(item.language) 
             return hasLanguage
         })
-        filteredRepos.forEach(element => {
-            element.name = element.name + ` (${element.topics})`
-        });
+        // filteredRepos.forEach(element => {
+        //     element.name = element.name + ` (${element.topics})`
+        // });
         return filteredRepos
         // return lodash.orderBy(repos, 'updated_at', 'desc')
     } catch (e) {
