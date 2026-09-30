@@ -12,7 +12,8 @@
             "telephone": "Telephone",
             "print": "Print CV",
             "present": "Present",
-            "lastUpdated": "Last updated"
+            "lastUpdated": "Last updated",
+            "technologies": "Technologies"
         }
     },
     "es": {
@@ -28,7 +29,8 @@
             "telephone": "Teléfono",
             "print": "Imprimir CV",
             "present": "Presente",
-            "lastUpdated": "Última actualización"
+            "lastUpdated": "Última actualización",
+            "technologies": "Tecnologías"
         }
     }
 }

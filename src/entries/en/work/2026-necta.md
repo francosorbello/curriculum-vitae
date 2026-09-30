@@ -3,7 +3,7 @@ title: Fullstack Developer
 organization: Necta
 organizationUrl: https://www.linkedin.com/company/necta-ar/
 start: 2026-04-01
-technologies: Typescript, Python, Nest.js, Loopback, Next.js, Django, HTMX
+technologies: Typescript, Python, NestJS, Loopback, Next.js, Django, HTMX
 # eleventyExcludeFromCollections: true
 ---
 
