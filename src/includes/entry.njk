@@ -36,4 +36,12 @@
             {{ entry.templateContent | safe }}
         </div>
     {% endif %}
+    
+    {% if entry.data.technologies %}
+        <br>
+        <div class="entry__content p-summary">
+            <b> Technologies: </b> {{ entry.data.technologies | safe }}.
+        </div>
+    {% endif %}
+
 </article>
